@@ -9,7 +9,7 @@ The test aims at delivering a simple implementation of one type of perks: the su
 
 A subsidy works as follow: 
 * The work council sets up a new perk in its own back-office
-  * The perk should have be defined over a period
+  * The perk should be defined over a period
   * The perk should a have a maximum amount
   * The perks can implement some rules applying on employees' eligibilities
 * An employee makes a reimbursement request regarding a perk
