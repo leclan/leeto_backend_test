@@ -15,7 +15,7 @@ A subsidy works as follow:
 * An employee makes a reimbursement request regarding a perk
   * The employee needs to access the list of the perks s.he is eligible to
   * The employee should be able to access a particular perk
-  * The employee can makes the reimbursement request by:
+  * The employee can make the reimbursement request by:
     * Specifying the amount s.he want to be reimbursed
     * Adding a receipt/proof of payment
 
