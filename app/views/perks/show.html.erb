@@ -1,0 +1,5 @@
+<h2><%= @perk.name%></h2>
+<p><%= @perk.amount %></p>
+<p><%= distance_of_time_in_words Time.now, @perk.end %></p>
+
+<%= render "perk_requests/new" %>

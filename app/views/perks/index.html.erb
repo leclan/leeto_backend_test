@@ -1,0 +1,5 @@
+<% @perks.each do |perk| %>
+  <h2><%= link_to "#{perk.name}", perk_path(perk) %></h2>
+  <p><%= perk.amount %></p>
+  <p><%= distance_of_time_in_words Time.now, perk.end %></p>
+<% end %>

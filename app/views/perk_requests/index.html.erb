@@ -1,0 +1,4 @@
+<% @perk_requests.each do |request| %>
+  <p><%= request.amount %></p>
+  <p><%= time_ago_in_words request.created_at %></p>
+<% end %>
