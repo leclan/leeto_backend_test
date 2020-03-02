@@ -5,6 +5,9 @@
       <p class='perk-amount'>The value of this perk is: $ <%= @perk.amount %></p>
       <p class='perk-end'>Expires in <%= distance_of_time_in_words Time.now, @perk.end %></p>
     </div>
+    <div class='perk-content'>
+      <p class='perk-amount'>You have $ <%= @perk.amount - @perk_requests_sum %> left.</p>
+    </div>
   </div>
 </div>
 

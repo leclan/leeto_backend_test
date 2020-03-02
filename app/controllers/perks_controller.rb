@@ -4,7 +4,7 @@ class PerksController < ApplicationController
   # Display only active perks attached to the current user organisation
   def index
     @perks = Perk.where(
-      "perks.start <= ? AND perks.end >= ? AND perks.organisation_id = ?",
+      'perks.start <= ? AND perks.end >= ? AND perks.organisation_id = ?',
       Date.today, Date.today, current_user.organisation_id
     )
   end
@@ -13,5 +13,6 @@ class PerksController < ApplicationController
   def show
     @perk = Perk.find(params[:id])
     @perk_request = PerkRequest.new(user_id: current_user.id, perk_id: params[:id])
+    @perk_requests_sum = @perk_request.get_available_amount
   end
 end

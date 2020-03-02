@@ -1,27 +1,32 @@
 class PerkRequestsController < ApplicationController
   before_action :authenticate_user!
-  # def _new
-  #   puts "perk request params: #{params}"
-  #   # @perk_request = PerkRequest.new(user_id: current_user.id, perk_id: params.id)
-  #   # @perk_request = PerkRequest.new
-  #   @perk_request = current_user.perk_requests.build
-  # end
 
+  # List all requests
   def index
     @perk_requests = PerkRequest.where(user_id: current_user.id)
   end
 
+  # Display one request
   def show
     @perk_request = PerkRequest.find(params[:id])
+    puts @perk_request.inspect
   end
 
+  # Returns a new request
   def new
     @perk_request = PerkRequest.new(user_id: current_user.id, perk_id: params[:id])
   end
 
+  # Save the request in the DB if the request is valid
   def create
     @perk_request = PerkRequest.new(perk_request_params)
     @perk_request.user_id = current_user.id
+
+    if @perk_request.invalid? || @perk_request.amount > @perk_request.get_available_amount
+      flash[:alert] = 'Invalid request'
+      redirect_to controller: 'perks', action: 'show', id: @perk_request[:perk_id]
+      return
+    end
 
 		if @perk_request.save
 			redirect_to @perk_request

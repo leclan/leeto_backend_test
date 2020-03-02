@@ -1,4 +1,11 @@
-<% @perk_requests.each do |request| %>
-  <p><%= request.amount %></p>
-  <p><%= time_ago_in_words request.created_at %></p>
-<% end %>
+<div class='perk-list'>
+  <% @perk_requests.each do |request| %>
+    <div class='perk'>
+      <h2 class='perk-title'><%= link_to "Request for #{request.perk.name}", perk_request_path(request) %></h2>
+      <div class='perk-content'>
+        <p class='perk-amount'>The amount of the request is: $ <%= request.amount %> out of $ <%=  request.perk.amount %></p>
+        <p class='perk-end'>Request sent <%= time_ago_in_words request.created_at %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
