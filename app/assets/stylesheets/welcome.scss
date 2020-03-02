@@ -2,3 +2,41 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+
+.jumbotron {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+
+  .jumbotron-title {
+    align-self: center;
+    margin: 1rem 0;
+    font-size: xx-large;
+    font-weight: 500;
+  }
+
+  .jumbotron-content {
+    align-self: center;
+    color: #768092;
+  }
+
+  .jumbotron-buttons {
+    align-self: center;
+    margin: 2rem 0;
+
+    a {
+      color: #fff;
+      background-color: #3f4d67;
+      transition: all .3s ease-in-out;
+      border: 1px solid #4e5f7f;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+
+      &:hover {
+        background-color: #303b4f;
+        border-color: #3f4d67;
+      }
+    }
+  }
+}

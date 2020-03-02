@@ -1,0 +1,86 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+// Global styles
+body {
+  background-color: #f4f7fa;
+}
+
+h2 {
+  color: #768092;
+}
+
+
+// Navigation header styles
+.header {
+  height: 4rem;
+  background-color: #3f4d67;
+  display: flex;
+  color: #a9b7d0;
+
+  .header-title {
+    flex-grow: 1;
+    align-self: center;
+    font-size: xx-large;
+    font-weight: 900;
+    margin-left: 1rem;
+  }
+
+  .header-buttons {
+    align-self: center;
+
+    a {
+      margin-right: 1rem;
+      color: inherit;
+      text-decoration: none;
+
+      &:hover {
+        color: #1dc4e9;
+      }
+    }
+  }
+}
+
+// Main container style
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 4rem;
+}
+
+// Styles for the notifications
+.notif {
+  &:not(:empty) {
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+
+  &:empty {
+    margin: 0;
+  }
+}
+
+.notice {
+  background-color: #d1ecf1;
+  color: #3b85a0;
+  border-color: #c9edf9;
+}
+
+.alert {
+  color: #994442;
+  border-color: #fccac7;
+  background-color: #f8d7da;
+}

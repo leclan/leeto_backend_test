@@ -1,0 +1,21 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+.perk-request {
+  .input {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    margin-bottom: 0.2rem;
+
+    input {
+      width: 70%;
+    }
+  }
+
+  .btn {
+    width: 40%;
+  }
+}

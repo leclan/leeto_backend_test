@@ -1,0 +1,38 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+.perk-list {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+
+  .perk {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    background-color: #d4dae5;
+
+    .perk-title {
+      background-color: #a3b0c7;
+      margin: 0;
+      padding: 1rem;
+
+      a {
+        color: #fff;
+
+        &:hover {
+          color: #d4dae5;
+        }
+      }
+    }
+
+    .perk-content {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 0 1rem;
+    }
+  }
+}

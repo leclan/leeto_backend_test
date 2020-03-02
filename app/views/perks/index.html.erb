@@ -1,5 +1,11 @@
+<div class='perk-list'>
 <% @perks.each do |perk| %>
-  <h2><%= link_to "#{perk.name}", perk_path(perk) %></h2>
-  <p><%= perk.amount %></p>
-  <p><%= distance_of_time_in_words Time.now, perk.end %></p>
+  <div class='perk'>
+    <h2 class='perk-title'><%= link_to "#{perk.name}", perk_path(perk) %></h2>
+    <div class='perk-content'>
+      <p class='perk-amount'>The value of this perk is: $ <%= perk.amount %></p>
+      <p class='perk-end'>Expires in <%= distance_of_time_in_words Time.now, perk.end %></p>
+    </div>
+  </div>
 <% end %>
+</div>

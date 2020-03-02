@@ -1,5 +1,9 @@
-<%= simple_form_for @perk_request do |f| %>
-  <%= f.input :amount %>
-  <%= f.input :perk_id, as: :hidden, input_html: { value: @perk_request.perk_id }  %>
-  <%= f.button :submit %>
-<% end %>
+
+<div class='perk-request'>
+  <h2>Make a request for this perk</h2>
+  <%= simple_form_for @perk_request do |f| %>
+    <%= f.input :amount %>
+    <%= f.input :perk_id, as: :hidden, input_html: { value: @perk_request.perk_id }  %>
+    <%= f.button :submit %>
+  <% end %>
+</div>

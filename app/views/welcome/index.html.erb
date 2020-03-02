@@ -1,1 +1,12 @@
-<h1> This is the welcome placeholder </h1>
+<div class='jumbotron'>
+  <div class='jumbotron-title'>
+    Welcome to your benefits interface
+  </div>
+  <div class='jumbotron-content'>
+    Access and manage all your company benefits in one single interface, to continue please log in or subscribe.
+  </div>
+  <div class='jumbotron-buttons'>
+    <%= link_to 'Log in', new_user_session_path %>
+    <%= link_to 'Sign up', new_user_registration_path %>
+  </div>
+</div>
