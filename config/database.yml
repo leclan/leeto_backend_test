@@ -85,3 +85,4 @@ production:
   database: leeto_backend_test_production
   username: leeto_backend_test
   password: <%= ENV['LEETO_BACKEND_TEST_DATABASE_PASSWORD'] %>
+  host: <%= ENV['LEETO_BACKEND_TEST_DATABASE_HOST'] %>

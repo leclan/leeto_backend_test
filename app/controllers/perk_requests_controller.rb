@@ -22,7 +22,9 @@ class PerkRequestsController < ApplicationController
     @perk_request = PerkRequest.new(perk_request_params)
     @perk_request.user_id = current_user.id
 
-    if @perk_request.invalid? || @perk_request.amount > @perk_request.get_available_amount
+    perk_amount_left = @perk_request.perk.amount - @perk_request.get_available_amount
+
+    if @perk_request.invalid? || @perk_request.amount > perk_amount_left
       flash[:alert] = 'Invalid request'
       redirect_to controller: 'perks', action: 'show', id: @perk_request[:perk_id]
       return
