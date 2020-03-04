@@ -1,6 +1,7 @@
 .simple_form {
   display: flex;
   flex-direction: column;
+  width: 50%;
 
   abbr {
     text-decoration: none;
@@ -13,7 +14,6 @@
     div[class*="email"], div[class*="password"] {
       display: flex;
       justify-content: space-between;
-      width: 80%;
       margin-bottom: 0.2rem;
 
       label {
@@ -31,8 +31,13 @@
       }
     }
 
+    .user_remember_me {
+      margin-left: 29%;
+    }
+
     .boolean {
       margin-bottom: 0.2rem;
+
       input {
         margin-right: 1rem;
       }
@@ -42,20 +47,6 @@
   .form-actions {
     margin: 1rem 0;
     align-self: flex-end;
-
-    input {
-      color: #fff;
-      background-color: #3f4d67;
-      transition: all .3s ease-in-out;
-      border: 1px solid #4e5f7f;
-      text-decoration: none;
-      padding: 0.5rem 1rem;
-
-      &:hover {
-        background-color: #303b4f;
-        border-color: #3f4d67;
-      }
-    }
   }
 }
 
@@ -67,5 +58,20 @@ a {
 
   &:hover {
     color: #1dc4e9;
+  }
+}
+
+.btn {
+  color: #fff;
+  background-color: #3f4d67;
+  transition: all .3s ease-in-out;
+  border: 1px solid #4e5f7f;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+
+  &:hover {
+    background-color: #303b4f;
+    border-color: #3f4d67;
+    cursor: pointer;
   }
 }

@@ -14,9 +14,13 @@
  *= require_self
  */
 
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
 // Global styles
 body {
   background-color: #f4f7fa;
+  font-family: 'Roboto', sans-serif;
+  color: #768092;
 }
 
 h2 {

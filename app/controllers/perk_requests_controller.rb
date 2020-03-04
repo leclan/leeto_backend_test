@@ -9,7 +9,6 @@ class PerkRequestsController < ApplicationController
   # Display one request
   def show
     @perk_request = PerkRequest.find(params[:id])
-    puts @perk_request.inspect
   end
 
   # Returns a new request

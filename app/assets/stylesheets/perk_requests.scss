@@ -7,8 +7,8 @@
   .input {
     display: flex;
     justify-content: space-between;
-    width: 40%;
-    margin-bottom: 0.2rem;
+    width: 60%;
+    margin-bottom: 0.7rem;
 
     input {
       width: 70%;
@@ -16,6 +16,7 @@
   }
 
   .btn {
-    width: 40%;
+    width: 60%;
+    margin-top: 1rem;
   }
 }
