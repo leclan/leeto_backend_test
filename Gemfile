@@ -36,7 +36,12 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'database_cleaner'
-  gem 'rspec-rails'
+  # gem 'rspec-rails' for rails 6 we need the gems below
+  gem 'rspec-core', git: 'https://github.com/rspec/rspec-core'
+  gem 'rspec-expectations', git: 'https://github.com/rspec/rspec-expectations'
+  gem 'rspec-mocks', git: 'https://github.com/rspec/rspec-mocks'
+  gem 'rspec-rails', git: 'https://github.com/rspec/rspec-rails', tag: 'v4.0.0.beta4'
+  gem 'rspec-support', git: 'https://github.com/rspec/rspec-support'
   gem 'shoulda-matchers'
 end
 
@@ -55,6 +60,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'rails-controller-testing'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

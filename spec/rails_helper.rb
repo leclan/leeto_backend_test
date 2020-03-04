@@ -6,6 +6,8 @@ ENV['RAILS_ENV'] ||= 'test'
 
 require File.expand_path('../config/environment', __dir__)
 
+require_relative 'support/controller_macros'
+
 # Prevent database truncation if the environment is production
 if Rails.env.production?
   abort('The Rails environment is running in production mode!')
@@ -46,6 +48,17 @@ Shoulda::Matchers.configure do |config|
 end
 
 RSpec.configure do |config|
+  # Devise helpers
+  config.include Devise::Test::ControllerHelpers, :type => :controller
+  config.extend ControllerMacros, :type => :controller
+
+  # rails-controller-testing
+  [:controller, :view, :request].each do |type|
+    config.include ::Rails::Controller::Testing::TestProcess, :type => type
+    config.include ::Rails::Controller::Testing::TemplateAssertions, :type => type
+    config.include ::Rails::Controller::Testing::Integration, :type => type
+  end
+
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
