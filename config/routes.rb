@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root 'perks#index'
+  resources :perks, only: %i(index) do
+    resources :reimbursement_requests, only: %i(new create show)
+  end
+
+  resources :sessions, only: %i(create)
+  get :signin, to: 'sessions#new', as: :signin
+  get :signout, to: 'sessions#destroy', as: :signout
 end

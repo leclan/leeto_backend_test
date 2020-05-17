@@ -10,6 +10,19 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="header">
+      <% if current_employee %>
+        Signed in as <%= current_employee.full_name %>.
+        <%= link_to "Sign out", signout_path %>
+      <% else %>
+        <%= link_to "Sign in", signin_path %>
+      <% end %>
+    </div>
+
+    <div class='container'>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </div>
   </body>
 </html>

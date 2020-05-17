@@ -1,0 +1,16 @@
+<p>
+  <strong>Employee:</strong>
+  <%= @reimbursement_request.employee.full_name %>
+</p>
+
+<p>
+  <strong>Perk:</strong>
+  <%= @reimbursement_request.perk.name %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @reimbursement_request.amount %> euros
+</p>
+
+<%= link_to 'Back to perks list', perks_path %>

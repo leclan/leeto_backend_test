@@ -1,0 +1,22 @@
+<%= form_with(model: reimbursement_request, local: true, url: perk_reimbursement_requests_path(perk)) do |form| %>
+  <% if reimbursement_request.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(reimbursement_request.errors.count, "error") %> prohibited this reimbursement_request from being saved:</h2>
+
+      <ul>
+        <% reimbursement_request.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :amount %>
+    <%= form.number_field :amount %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

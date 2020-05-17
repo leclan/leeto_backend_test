@@ -31,3 +31,12 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    errors:
+      models:
+        reimbursement_request:
+          attributes:
+            amount:
+              exceeds_perk_maximum: Amount exceeds maximum allowed for the perk
+            employee:
+              not_eligible: Your are not eligible for this perk
