@@ -25,6 +25,17 @@ RSpec.feature "Perk management", type: :feature do
       expect(page).to have_content('chateau')
       expect(page).to have_no_content('prime')
       expect(page).to have_no_content('theatre')
+
+      click_on('netflix')
+      expect(page).to have_current_path(perk_path(perk1_org1))
+
+      click_on(I18n.t('perks.show.request'))
+      expect(page).to have_current_path(new_perk_reimbursement_request_path(perk1_org1))
+
+      fill_in 'Amount', with: 12.99
+      click_button
+      expect(page).to have_current_path(perks_path)
+      expect(page).to have_content(I18n.t('reimbursement_requests.create.created_successfully'))
     end
   end
 end

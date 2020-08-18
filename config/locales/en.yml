@@ -33,3 +33,11 @@ en:
   layouts:
     application:
       logout: 'Logout'
+  perks:
+    show:
+      request: 'Request a reimbursement'
+  reimbursement_requests:
+    new:
+      request: 'Request a reimbursement'
+    create:
+      created_successfully: 'Reimbursement request created.'

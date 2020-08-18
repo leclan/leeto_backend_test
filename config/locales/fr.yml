@@ -2,3 +2,11 @@ fr:
   layouts:
     application:
       logout: 'Déconnexion'
+  perks:
+    show:
+      request: 'Demande de remboursement'
+  reimbursement_requests:
+    new:
+      request: 'Request'
+    create:
+      created_successfully: 'Demande de remboursement créée.'

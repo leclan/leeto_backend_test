@@ -1,0 +1,9 @@
+<div class="perk">
+  <div><%= @perk.name %></div>
+</div>
+
+<%= form_with model: [@perk, @reimbursement_request] do |f| %>
+  <%= f.label :amount %>
+  <%= f.text_field :amount %>
+  <%= f.submit t('.request') %>
+<% end %>
