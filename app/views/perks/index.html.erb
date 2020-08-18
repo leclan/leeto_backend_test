@@ -1,0 +1,7 @@
+<div id="perks">
+  <% @perks.each do |perk| %>
+    <div class="perk">
+      <div><%= link_to perk.name, perk_path(perk) %></div>
+    </div>
+  <% end %>
+</div>
