@@ -1,9 +1,11 @@
 class PerksController < ApplicationController
+  before_action :authenticate_employee!
+
   def index
-    @perks = Perk.all
+    @perks = current_employee.perks
   end
 
   def show
-    @perk = Perk.find(params.require(:id))
+    @perk = current_employee.perks.find(params.require(:id))
   end
 end

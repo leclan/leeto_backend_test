@@ -1,0 +1,4 @@
+fr:
+  layouts:
+    application:
+      logout: 'Déconnexion'
