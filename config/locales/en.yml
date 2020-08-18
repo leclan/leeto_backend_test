@@ -37,7 +37,7 @@ en:
     show:
       request: 'Request a reimbursement'
   reimbursement_requests:
-    new:
+    reimbursement_request:
       request: 'Request a reimbursement'
     create:
       created_successfully: 'Reimbursement request created.'

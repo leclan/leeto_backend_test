@@ -6,7 +6,7 @@ fr:
     show:
       request: 'Demande de remboursement'
   reimbursement_requests:
-    new:
+    reimbursement_request:
       request: 'Request'
     create:
       created_successfully: 'Demande de remboursement créée.'

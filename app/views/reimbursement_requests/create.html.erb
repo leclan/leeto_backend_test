@@ -1,0 +1,7 @@
+<% if @reimbursement_request.errors.full_messages.any? %>
+  <% @reimbursement_request.errors.full_messages.each do |error_message| %>
+    <%= error_message %>
+  <% end %>
+<% end %>
+
+<%= render @reimbursement_request %>
