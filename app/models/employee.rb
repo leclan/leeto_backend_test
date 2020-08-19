@@ -7,6 +7,6 @@ class Employee < ApplicationRecord
   validates :last_name, presence: true
 
   def perks
-    organisation.perks
+    organisation.perks.active
   end
 end
