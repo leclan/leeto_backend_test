@@ -1,0 +1,10 @@
+AllCops:
+  TargetRubyVersion: 2.7.0
+  Exclude:
+    - 'bin/*'
+    - 'config/**/*'
+    - 'db/schema.rb'
+    - 'db/seeds.rb'
+    - 'db/migrate/**/*'
+    - 'node_modules/**/*'
+    - 'spec/**/*'
