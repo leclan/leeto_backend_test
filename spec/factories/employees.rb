@@ -6,5 +6,6 @@ FactoryBot.define do
     organisation { create :organisation }
     password { 'secret' }
     password_confirmation { 'secret' }
+    hire_date { Time.current - 1.year }
   end
 end

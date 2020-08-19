@@ -44,6 +44,15 @@ RSpec.describe ReimbursementRequestsController, type: :controller do
         end
       end
 
+      context 'when employee is not senior enough' do
+        let(:perk) { create(:perk, organisation: org, seniority: 24) }
+
+        it 'returns http not found' do
+          expect { subject }
+            .to raise_error ActiveRecord::RecordNotFound
+        end
+      end
+
       context 'when perk is from another org' do
         let(:other_org) { create(:organisation) }
         let(:perk) { create(:perk, organisation: other_org) }

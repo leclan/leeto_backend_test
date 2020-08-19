@@ -20,5 +20,19 @@ RSpec.describe Perk, type: :model do
         expect(subject.count).to eq 1
       end
     end
+
+    describe 'visible' do
+      let!(:perk1) { create(:previous_perk, seniority: 10) }
+      let!(:perk2) { create(:perk, seniority: 5) }
+      let!(:perk3) { create(:perk, seniority: 13) }
+      let!(:perk4) { create(:future_perk, seniority: 20) }
+
+      subject { Perk.visible(12) }
+
+      it 'retuns only perks for at least 1 year seniority' do
+        expect(subject.to_a).to contain_exactly(perk2)
+        expect(subject.count).to eq 1
+      end
+    end
   end
 end

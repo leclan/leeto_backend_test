@@ -7,6 +7,7 @@ FactoryBot.define do
     organisation { create :organisation }
     start_date { Time.current - 5.days }
     end_date { Time.current + 2.days }
+    seniority { 12 }
 
     factory :previous_perk do
       start_date { Time.current - 5.days }

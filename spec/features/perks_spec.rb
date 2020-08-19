@@ -7,6 +7,7 @@ RSpec.feature "Perk management", type: :feature do
     let!(:perk1_org1) { create(:perk, name: 'netflix', organisation: org1) }
     let!(:perk2_org1) { create(:perk, name: 'chateau', organisation: org1) }
     let!(:perk3_org1) { create(:previous_perk, name: 'hotel', organisation: org1) }
+    let!(:perk4_org1) { create(:perk, name: 'hotel', organisation: org1, seniority: 24) }
 
     let(:org2) { create(:organisation) }
     let!(:perk1_org2) { create(:perk, name: 'prime', organisation: org2) }
