@@ -1,7 +1,13 @@
+<div class="perk">
+  <h1 class="text-xl mb-4"><%= @perk.name %></h1>
+</div>
+
 <% if @reimbursement_request.errors.full_messages.any? %>
-  <% @reimbursement_request.errors.full_messages.each do |error_message| %>
-    <%= error_message %>
-  <% end %>
+  <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+    <% @reimbursement_request.errors.full_messages.each do |error_message| %>
+      <%= error_message %>
+    <% end %>
+  </div>
 <% end %>
 
 <%= render @reimbursement_request %>

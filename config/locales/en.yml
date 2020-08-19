@@ -30,11 +30,30 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  application_name: 'Leeto'
   layouts:
     application:
+      my_perks: 'My perks'
       logout: 'Logout'
+      baseline: 'Future of perks at hand.'
+  devise:
+    sessions:
+      new:
+        log_in: 'Log in'
+        remember_me: 'Remember me'
   perks:
+    index:
+      perk_description: 'This is all your available perks.'
     show:
+      maximum_amount_label: 'Maximum amount:'
+      maximum_amount: '$%{maximum_amount}'
+      min_seniority_label: 'Minimal seniority:'
+      seniority:
+        zero: 'None'
+        one: '1 month'
+        other: '%{count} months'
+      availability_label: 'Availability:'
+      availability_date: 'From %{start_date} to %{end_date}'
       request: 'Request a reimbursement'
   reimbursement_requests:
     reimbursement_request:

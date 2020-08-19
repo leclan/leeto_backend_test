@@ -1,9 +1,25 @@
 fr:
+  application_name: 'Leeto'
   layouts:
     application:
+      my_perks: 'Mes avantages'
       logout: 'Déconnexion'
+      baseline: 'Le futur des avantages à portée de main.'
+  devise:
+    sessions:
+      new:
+        log_in: 'Connexion'
+        remember_me: 'Se rappeler de moi'
   perks:
+    index:
+      perk_description: 'Voici toutes vos avantages disponibles.'
     show:
+      maximum_amount_label: 'Montant maximum:'
+      maximum_amount: '$%{maximum_amount}'
+      min_seniority_label: 'Ancienneté requise:'
+      seniority: '%{count} mois'
+      availability_label: 'Disponibilité:'
+      availability_date: 'Du %{start_date} au %{end_date}'
       request: 'Demande de remboursement'
   reimbursement_requests:
     reimbursement_request:
