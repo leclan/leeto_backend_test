@@ -21,9 +21,15 @@ RSpec.describe PerksController, type: :controller do
   end
 
   describe 'GET #show' do
+    let(:perk_id) { perk.id }
+
+    subject { get :show, params: { id: perk_id } }
+
     context 'when employee is not logged' do
+      let(:perk_id) { -1 }
+
       it 'returns http redirect' do
-        get :index
+        subject
         expect(response).to have_http_status(:redirect)
       end
     end
@@ -31,13 +37,14 @@ RSpec.describe PerksController, type: :controller do
     context 'when employee is logged' do
       let(:org) { create(:organisation) }
       let(:employee) { create(:employee, organisation: org) }
+
       before { sign_in(employee) }
 
       context 'when perk exists' do
         let(:perk) { create(:perk, organisation: org) }
 
         it 'returns http success' do
-          get :show, params: { id: perk.id }
+          subject
           expect(response).to have_http_status(:success)
         end
       end
@@ -46,7 +53,7 @@ RSpec.describe PerksController, type: :controller do
         let(:perk) { create(:previous_perk, organisation: org) }
 
         it 'returns http not found' do
-          expect { get :show, params: { id: perk.id } }
+          expect { subject }
             .to raise_error ActiveRecord::RecordNotFound
         end
       end
@@ -55,7 +62,7 @@ RSpec.describe PerksController, type: :controller do
         let(:perk) { create(:future_perk, organisation: org) }
 
         it 'returns http not found' do
-          expect { get :show, params: { id: perk.id } }
+          expect { subject }
             .to raise_error ActiveRecord::RecordNotFound
         end
       end
@@ -64,7 +71,7 @@ RSpec.describe PerksController, type: :controller do
         let(:perk) { create(:perk, organisation: org, seniority: 24) }
 
         it 'returns http not found' do
-          expect { get :show, params: { id: perk.id } }
+          expect { subject }
             .to raise_error ActiveRecord::RecordNotFound
         end
       end
@@ -74,14 +81,16 @@ RSpec.describe PerksController, type: :controller do
         let(:perk) { create(:perk, organisation: other_org) }
 
         it 'returns http not found' do
-          expect { get :show, params: { id: perk.id } }
+          expect { subject }
             .to raise_error ActiveRecord::RecordNotFound
         end
       end
 
       context 'when perk doesnt exist' do
+        let(:perk_id) { -1 }
+
         it 'returns http not found' do
-          expect { get :show, params: { id: -1 } }
+          expect { subject }
             .to raise_error ActiveRecord::RecordNotFound
         end
       end
