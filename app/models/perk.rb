@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Represent a perk.
 class Perk < ApplicationRecord
   belongs_to :organisation
 

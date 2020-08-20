@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Represents the reimbursement request controller.
 class ReimbursementRequestsController < ApplicationController
   before_action :authenticate_employee!
   before_action :set_perk

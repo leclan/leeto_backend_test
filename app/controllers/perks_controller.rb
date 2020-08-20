@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Represents the perks controller.
 class PerksController < ApplicationController
   before_action :authenticate_employee!
 

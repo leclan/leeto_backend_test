@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Represent an employee.
 class Employee < ApplicationRecord
   devise :database_authenticatable,
          :recoverable, :rememberable, :validatable

@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Represent a reimbursement request.
 class ReimbursementRequest < ApplicationRecord
   belongs_to :employee
   belongs_to :perk
@@ -11,8 +12,8 @@ class ReimbursementRequest < ApplicationRecord
   private
 
   def amount_cannot_be_superior_to_perk_amount
-    if amount.present? && amount > perk.maximum_amount
-      errors.add(:amount, "can't be superior to #{perk.maximum_amount}")
-    end
+    return unless amount.present? && amount > perk.maximum_amount
+
+    errors.add(:amount, "can't be superior to #{perk.maximum_amount}")
   end
 end
