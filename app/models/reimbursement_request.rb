@@ -3,6 +3,7 @@
 class ReimbursementRequest < ApplicationRecord
   belongs_to :employee
   belongs_to :perk
+  has_one_attached :receipt
 
   validates :amount, presence: true, numericality: true
   validate :amount_cannot_be_superior_to_perk_amount

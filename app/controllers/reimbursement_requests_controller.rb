@@ -23,6 +23,6 @@ class ReimbursementRequestsController < ApplicationController
   end
 
   def reimbursement_request_params
-    params.require(:reimbursement_request).permit(:amount)
+    params.require(:reimbursement_request).permit(:amount, :receipt)
   end
 end
